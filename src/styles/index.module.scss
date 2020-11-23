@@ -1,0 +1,19 @@
+.index {
+  display: grid;
+  grid-template-columns: minmax(1px, 15%) 1fr minmax(0px, 15%);
+  section {
+    grid-column: 2/3;
+  }
+}
+
+// .index {
+//   display: flex;
+//   justify-content: center;
+//   section {
+//     background-color: black;
+
+//     @media only screen and (min-width : 980px) {
+//       min-width: 70%;
+//     }
+//   }
+// }
