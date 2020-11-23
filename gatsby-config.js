@@ -21,7 +21,8 @@ module.exports = {
       options: {
         name: `carbonalt`,
         short_name: `ca`,
-        start_url: `/`
+        start_url: `/`,
+        icon: "src/images/icon.png"
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
