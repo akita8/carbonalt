@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.iconSelect {
+    display: flex;
+    flex-direction: row;
+    .box {
+        margin-right: 10px;
+        height: 50px;
+        width: 50px;
+        border: $text-primary solid 2px;
+        border-radius: 5px;
+    }
+    .active {
+        background-color: powderblue;
+    }
+}

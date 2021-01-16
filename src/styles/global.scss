@@ -1,6 +1,10 @@
+@import './colors.scss';
+
 body {
   margin: 0px;
   font-family: 'Spartan', sans-serif;
+  color: $text-primary;
+  font-size: 14px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500&display=swap')
