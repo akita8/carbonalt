@@ -1,10 +1,12 @@
+@import '../../styles/colors.scss';
+
 .pageFooter {
   padding: 10px;
   text-align: center;
-  background-color: black;
-  color: white;
+  background-color: $background-primary;
+  color: $text-primary;
 
   span {
-    color: red;
+    color: $text-warning;
   }
 }

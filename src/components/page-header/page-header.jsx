@@ -1,14 +1,20 @@
 import React from "react"
-import PropTypes from "prop-types"
+
+import { ReactComponent as Cloud } from '../../icons/cloud.svg';
 
 import style from "./page-header.module.scss"
 
-export const PageHeader = ({siteTitle=``}) => (
-  <header className={style.pageHeader}>
-    Carbon<span>Alt</span>
-  </header>
+export const PageHeader = () => (
+  <nav className={style.pageHeader}>
+    <ol>
+        <li><span>Carbon</span><span>Alt</span></li>
+        <li>facts</li> 
+        <li>links</li>
+        <li>about us</li>
+    </ol>
+  </nav>
 )
 
-PageHeader.propTypes = {
-  siteTitle: PropTypes.string,
-}
+// facts nuvola
+// links at 
+// about us team
