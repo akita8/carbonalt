@@ -1,8 +1,10 @@
-@import "../../styles/colors.scss";
-
 .pageFooter {
   padding: 10px;
   text-align: center;
-  background-color: $green;
-  color: $aqua-marine;
+  background-color: black;
+  color: white;
+
+  span {
+    color: red;
+  }
 }

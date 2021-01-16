@@ -1,11 +1,9 @@
-@import "../../styles/colors.scss";
-
 .layout {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 
   main {
-    background-color: $pale-green;
+    background-color: rgb(223, 223, 223);
   }
 }

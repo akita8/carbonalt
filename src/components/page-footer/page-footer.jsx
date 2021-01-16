@@ -5,7 +5,7 @@ import style from "./page-footer.module.scss"
 
 export const PageFooter = () => (
   <footer className={style.pageFooter}>
-    © {new Date().getFullYear()} Carbonalt
+    © {new Date().getFullYear()} Carbon<span>Alt</span>
   </footer>
 )
 

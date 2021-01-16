@@ -5,7 +5,7 @@ import style from "./page-header.module.scss"
 
 export const PageHeader = ({siteTitle=``}) => (
   <header className={style.pageHeader}>
-    {siteTitle}
+    Carbon<span>Alt</span>
   </header>
 )
 
