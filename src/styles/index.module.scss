@@ -6,6 +6,7 @@
   .page {
     grid-column: 2/3;
     padding: 20px;
+    flex-wrap: wrap;
 
     .countrySelector {
       margin-top: 10px;
