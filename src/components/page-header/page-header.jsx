@@ -1,22 +1,18 @@
 import React from "react"
 
-import { ReactComponent as Cloud } from '../../icons/cloud.svg';
-import { ReactComponent as Team } from '../../icons/team.svg';
-import { ReactComponent as At } from '../../icons/at.svg';
+import { Icon } from '../icon'
 
 import style from "./page-header.module.scss"
+
+// TODO add drawer for mobile navigation
 
 export const PageHeader = () => (
   <nav className={style.pageHeader}>
     <ol>
-        <li><span>Carbon</span><span>Alt</span></li>
-        <li><Cloud className={style.icon}/>facts</li> 
-        <li> <At className={style.icon}/>links</li>
-        <li><Team className={style.icon}/>about us</li>
+        <li><a href="/"><span>Carbon</span><span>Alt</span></a></li>
+        <li><a href="/facts"><Icon name="cloud" className={style.icon}/>facts</a></li>
+        <li><a href="/links"><Icon name="at" className={style.icon}/>links</a></li>
+        <li><a href="/about"><Icon name="team" className={style.icon}/>about us</a></li>
     </ol>
   </nav>
 )
-
-// facts nuvola
-// links at 
-// about us team

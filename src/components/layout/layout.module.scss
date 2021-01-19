@@ -1,9 +1,15 @@
 .layout {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 
   main {
+    flex: 1;
     background-color: rgb(223, 223, 223);
+    display: grid;
+    grid-template-columns: minmax(0px, 15%) 1fr minmax(0px, 15%);
+    .page {
+      grid-column: 2/3;
+    }
   }
 }

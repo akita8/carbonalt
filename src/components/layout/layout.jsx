@@ -7,7 +7,7 @@ import { PageFooter } from "../page-footer"
 
 import style from "./layout.module.scss"
 
-export const Layout = ({ children, contentClassName }) => {
+export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,7 +21,11 @@ export const Layout = ({ children, contentClassName }) => {
   return (
     <div className={style.layout}>
       <PageHeader siteTitle={data.site.siteMetadata?.title} />
-      <main className={contentClassName}>{children}</main>
+      <main>
+        <div className={style.page}>
+          {children}
+        </div>
+      </main>
       <PageFooter />
     </div>
   )
