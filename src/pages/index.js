@@ -15,6 +15,25 @@ const BEST_CO2_TIMES = {
   'it': '12:30'
 }
 
+const APPLIANCE_OPTIONS = [
+  // TODO move to config file
+  {name: 'washing-machine', consumption: 1.05},
+  {name: 'laptop', consumption: 0.30},
+  {name: 'hair-dryer', consumption: 0.84},
+  {name: 'mobile-phone', consumption: 0.06},
+  {name: 'laptop-charging', consumption: 0.60},
+  {name: 'dishwasher', consumption: 0.65},
+  {name: 'vacuum-cleaner', consumption: 1.50},
+];
+
+const CO2_PRODUCTION_FOR_KWH = [
+  {name: 'fossil_coal_derived_gas', produced: 1498.40},
+  {name: 'fossil_gas', produced: 368.3},
+  {name: 'fossil_hard_coal', produced: 870},
+  {name: 'fossil_oil', produced: 548.9},
+  {name: 'waste', produced: 133.3},
+]
+
 // TODO add localization support
 
 const IndexPage = () => {
@@ -83,16 +102,7 @@ const IndexPage = () => {
 
             <IconSelect
               selectedConsumption={selectedConsumption}
-              options={[
-                // TODO move to config file
-                {name: 'washing-machine', consumption: 1.05},
-                {name: 'laptop', consumption: 0.30},
-                {name: 'hair-dryer', consumption: 0.84},
-                {name: 'mobile-phone', consumption: 0.06},
-                {name: 'laptop-charging', consumption: 0.60},
-                {name: 'dishwasher', consumption: 0.65},
-                {name: 'vacuum-cleaner', consumption: 1.50},
-              ]}
+              options={APPLIANCE_OPTIONS}
               onChange={o => setSelectedConsumption(o.consumption)}/>
 
             <p>Select period of today usage:</p>

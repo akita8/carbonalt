@@ -10,6 +10,7 @@ import MobilePhone from '../../icons/mobile-phone.svg'
 import Cloud from '../../icons/cloud.svg'
 import Team from '../../icons/team.svg'
 import At from '../../icons/at.svg'
+import Logo from '../../icons/logo.svg'
 
 
 const IconsNames = {
@@ -22,7 +23,8 @@ const IconsNames = {
   'mobile-phone': MobilePhone,
   'cloud': Cloud,
   'team': Team,
-  'at': At
+  'at': At,
+  'logo': Logo
 }
 
 export const Icon = ({ name, className }) => {
