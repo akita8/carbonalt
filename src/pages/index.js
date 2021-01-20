@@ -26,13 +26,13 @@ const APPLIANCE_OPTIONS = [
   {name: 'vacuum-cleaner', consumption: 1.50},
 ];
 
-const CO2_PRODUCTION_FOR_KWH = [
-  {name: 'fossil_coal_derived_gas', produced: 1498.40},
-  {name: 'fossil_gas', produced: 368.3},
-  {name: 'fossil_hard_coal', produced: 870},
-  {name: 'fossil_oil', produced: 548.9},
-  {name: 'waste', produced: 133.3},
-]
+// const CO2_PRODUCTION_FOR_KWH = [
+//   {name: 'fossil_coal_derived_gas', produced: 1498.40},
+//   {name: 'fossil_gas', produced: 368.3},
+//   {name: 'fossil_hard_coal', produced: 870},
+//   {name: 'fossil_oil', produced: 548.9},
+//   {name: 'waste', produced: 133.3},
+// ]
 
 // TODO add localization support
 
@@ -55,7 +55,7 @@ const IndexPage = () => {
 
     return (
     <Layout>
-      <article>
+      <article className={style.index}>
         <SEO title="Home" />
         <section >
           <h1>Welcome!</h1>

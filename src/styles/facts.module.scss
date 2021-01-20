@@ -1,19 +1,15 @@
 @import './colors.scss';
 
-h1 {
-  margin-top: 40px;
-}
+.facts {
 
-.image {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-}
-.citation {
-  opacity: 0.60;
-  font-size: 12px;
-  a {
-    color: $text-primary;
+  .image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .citation {
+    opacity: 0.60;
+    font-size: 12px;
   }
 }
