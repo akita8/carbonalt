@@ -35,8 +35,20 @@
     li:first-child {
       font-size: 32px;
       font-weight: bold;
-      span:last-child {
-        color:$text-warning;
+      a {
+        display: flex;
+        align-items: flex-end;
+        .text {
+          position: relative;
+          right: 10px;
+          span:last-child {
+            color:$text-warning;
+          }
+        }
+        .logo {
+          height: 50px;
+          width: 50px;
+        }
       }
     }
 
