@@ -11,6 +11,10 @@ import Cloud from '../../icons/cloud.svg'
 import Team from '../../icons/team.svg'
 import At from '../../icons/at.svg'
 import Logo from '../../icons/logo.svg'
+import Lidia from '../../icons/lidia.svg'
+import Marco from '../../icons/marco.svg'
+import Niko from '../../icons/niko.svg'
+import Linkedin from '../../icons/linkedin.svg'
 
 
 const IconsNames = {
@@ -24,7 +28,11 @@ const IconsNames = {
   'cloud': Cloud,
   'team': Team,
   'at': At,
-  'logo': Logo
+  'logo': Logo,
+  'lidia': Lidia,
+  'marco': Marco,
+  'niko': Niko,
+  'linkedin': Linkedin,
 }
 
 export const Icon = ({ name, className }) => {

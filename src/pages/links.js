@@ -17,7 +17,9 @@ const LinksPage = () => (
           (<a target="_blank" rel="noreferrer" href="https://eit.europa.eu/">EIT</a>).
         </p>
         <p>This website has been built with <a target="_blank" rel="noreferrer" href="https://www.gatsbyjs.com/">Gatsby</a>.</p>
-        <p>Icons by <a target="_blank" rel="noreferrer" href="https://www.svgrepo.com/">svgrepo</a>. </p>
+        <p>Icons by <a target="_blank" rel="noreferrer" href="https://www.svgrepo.com/">svgrepo</a>
+        &nbsp;and available under the&nbsp;
+           <a target="_blank" rel="noreferrer" href="https://creativecommons.org/licenses/by-sa/3.0/deed.it">Creative Commons License</a>. </p>
       </section>
       <section>
         <h1>Sources</h1>

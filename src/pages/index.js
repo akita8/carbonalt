@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import classnames from 'classnames'
+import { Link } from "gatsby"
 
 import Select from 'react-select';
 import TimePicker from 'rc-time-picker';
@@ -61,7 +62,7 @@ const IndexPage = () => {
           <h1>Welcome!</h1>
           <p>On this platform we want to share awarness about the connection between carbon dioxide emissions and electricity consumption.
             Would you like to know more about carbon dioxide effects?
-            Check our <a href="/facts">facts</a> section!
+            Check our <Link to="/facts">facts</Link> section!
           </p>
 
           <p>
