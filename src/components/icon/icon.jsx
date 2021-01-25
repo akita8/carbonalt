@@ -15,6 +15,7 @@ import Lidia from '../../icons/lidia.svg'
 import Marco from '../../icons/marco.svg'
 import Niko from '../../icons/niko.svg'
 import Linkedin from '../../icons/linkedin.svg'
+import Menu from '../../icons/menu.svg'
 
 
 const IconsNames = {
@@ -33,6 +34,7 @@ const IconsNames = {
   'marco': Marco,
   'niko': Niko,
   'linkedin': Linkedin,
+  'menu': Menu,
 }
 
 export const Icon = ({ name, className }) => {

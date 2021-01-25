@@ -6,6 +6,9 @@
   z-index: 1;
   position: sticky;
   top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   ol {
     list-style-type: none;
     display: flex;
@@ -30,6 +33,11 @@
       border-radius: 15px;
       background-color: $background-primary-hover;
       transition: background-color .2s;
+    }
+    @media (hover: none) {
+      li:hover {
+        background-color: inherit;
+      }
     }
 
     li:first-child {
@@ -57,10 +65,25 @@
       height: 20px;
       width: 20px;
     }
-    @media only screen and (max-device-width: 667px) { 
-        li:not(:first-child) {
-          visibility: hidden;
-        }
+
+  }
+  .navMenu {
+    display: none;
+  }
+  @media only screen and (max-device-width: 667px) { 
+    li:not(:first-child) {
+      display: none;
+    }
+    .navMenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-right: 20px;
+      .menuIcon {
+        height: 35px;
+        width: 35px;
+      }
     }
   }
 }

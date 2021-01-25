@@ -77,10 +77,11 @@ const IndexPage = () => {
           <h1>CO&#8322; Usage Calculator</h1>
 
           <div className={style.countrySelector}>
-            <label>Choose your country:</label>
+            <p>Choose your country:</p>
             <Select
               onChange={(v) => setSelectedCountry(v.value)}
-              className={style.selector} options={countryOptions}
+              className={style.select}
+              options={countryOptions}
             />
           </div>
           {
@@ -97,7 +98,10 @@ const IndexPage = () => {
 
             <p>Insert the average consumption of your appliance of your choice [kWh]:</p>
 
-            <input type="number" onChange={e => setSelectedConsumption(e.target.value)} value={selectedConsumption}></input>
+            <input
+              type="number"
+              onChange={e => setSelectedConsumption(e.target.value)}
+              value={selectedConsumption}/>
 
             <p>Or choose one of our predefined profiles:</p>
 
@@ -105,35 +109,35 @@ const IndexPage = () => {
               selectedConsumption={selectedConsumption}
               options={APPLIANCE_OPTIONS}
               onChange={o => setSelectedConsumption(o.consumption)}/>
-
-            <p>Select period of today usage:</p>
-
-            <div className={style.periodSelect}>
-              {/* TODO add validation */}
-              <div className={style.picker}>
-                <span>From:</span>
-                <TimePicker
-                  showSecond={false}
-                  onChange={t => setTimeFrom(t)}
-                />
-              </div>
-              <div className={style.picker}>
-                <span>To:</span>
-                <TimePicker
-                  showSecond={false}
-                  onChange={t => setTimeTo(t)}
-                />
-              </div>
-            </div>
-            
-            {
-              co2Produced &&
-              <div className={classnames(style.results, style.co2Results)}>
-                <p>The total amount of CO&#8322; emitted for the indicated consumption is:</p>
-                <span>{co2Produced} g</span>
-              </div>
-            }
           </div>
+
+          <p>Select period of today usage:</p>
+
+          <div className={style.periodSelect}>
+            {/* TODO add validation */}
+            <div className={style.picker}>
+              <span>From:</span>
+              <TimePicker
+                showSecond={false}
+                onChange={t => setTimeFrom(t)}
+              />
+            </div>
+            <div className={style.picker}>
+              <span>To:</span>
+              <TimePicker
+                showSecond={false}
+                onChange={t => setTimeTo(t)}
+              />
+            </div>
+          </div>
+            
+          {
+            co2Produced &&
+            <div className={classnames(style.results, style.co2Results)}>
+              <p>The total amount of CO&#8322; emitted for the indicated consumption is:</p>
+              <span>{co2Produced} g</span>
+            </div>
+          }
         </section>
       </article>
     </Layout>

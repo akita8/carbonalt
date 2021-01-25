@@ -10,16 +10,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    p {
+      text-align: center;
+    }
   }
   
   .countrySelector {
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    label {
-      margin-right: 20px;
+    p {
       margin-bottom: 10px;
+    }
+    .select {
+      width: 200px;
     }
   }
   
@@ -43,25 +47,49 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    input {
+      padding: 11px 8px 10px 8px;
+      background-color: hsl(0,0%,100%);
+      border-color: hsl(0,0%,80%);
+      border-radius: 4px;
+      border-style: solid;
+      border-width: 1px;
+      margin-bottom: 10px;
+      width: 100px;
+      text-align: center;
+      font-family: 'Spartan', sans-serif;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
   }
   
   .periodSelect {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
   
     .picker {
       display: flex;
       flex-direction: row;
       align-items: center;
       margin-bottom: 5px;
+      width: 100%;
+      justify-content: space-between;
+      input {
+        font-family: 'Spartan', sans-serif;
+        width: 100px;
+      }
       span:first-child {
         margin-right: 5px;
       }
-    
-    }
-    .picker:first-child {
-      margin-right: 20px;
     }
   }
   

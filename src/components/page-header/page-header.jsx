@@ -4,9 +4,7 @@ import { Link } from "gatsby"
 import { Icon } from '../icon'
 
 import style from "./page-header.module.scss"
-
-// TODO add drawer for mobile navigation
-
+  
 export const PageHeader = () => (
   <nav className={style.pageHeader}>
     <ol>
@@ -22,5 +20,9 @@ export const PageHeader = () => (
         <li><Link to="/links"><Icon name="at" className={style.icon}/>links</Link></li>
         <li><Link to="/about"><Icon name="team" className={style.icon}/>about us</Link></li>
     </ol>
+    {/* FIXME it's not semantic, it should be */}
+    <div role="button" className={style.navMenu}>
+      <Icon name="menu" className={style.menuIcon}/>
+    </div>
   </nav>
 )
