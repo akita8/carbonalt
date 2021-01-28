@@ -1,3 +1,4 @@
+# import numpy as np
 import torch
 
 
@@ -46,17 +47,21 @@ class MV_LSTM(torch.nn.Module):
         return self.soft(x_lin)
 
 
-def run(previous_two_days):
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    # these need to stay like this
+def run(previous_two_days, path_to_model):
+    previous_two_days = torch.from_numpy(previous_two_days)
+    device = torch.device("cpu")
 
-    n_features = 14  # this is number of input time series
-    n_timesteps = 48  # this is number of timesteps (hours)
-    # initializing the object
+    n_features = 13
+    n_timesteps = 48
+
     mv_net = MV_LSTM(n_features, n_timesteps, device).float().to(device)
-    # insert the trained model from the saved dictionary
-    mv_net.load_state_dict(torch.load("trained_energy"))
+
+    mv_net.load_state_dict(torch.load(path_to_model))
     mv_net.init_hidden(previous_two_days.unsqueeze(0).size(0))
     predictions = mv_net(previous_two_days.unsqueeze(0).float().to(device))
+
+    # converting matrix from megawatts to kilowatts
+    # predictions_matrix = predictions.detach().numpy()
+    # predictions_matrix = predictions_matrix / np.array(1000)
 
     return predictions
