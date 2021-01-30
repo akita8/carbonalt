@@ -1,4 +1,4 @@
-# import numpy as np
+import numpy as np
 import torch
 
 
@@ -47,7 +47,11 @@ class MV_LSTM(torch.nn.Module):
         return self.soft(x_lin)
 
 
-def run(previous_two_days, path_to_model):
+def run(previous_two_days, path_to_model, hours_ahead=24):
+    """
+    input: the last available part of the data, hours to predict ahead
+    output: predictions as hours_ahead x 13
+    """
     previous_two_days = torch.from_numpy(previous_two_days)
     device = torch.device("cpu")
 
@@ -57,11 +61,22 @@ def run(previous_two_days, path_to_model):
     mv_net = MV_LSTM(n_features, n_timesteps, device).float().to(device)
 
     mv_net.load_state_dict(torch.load(path_to_model))
+
+    # previous_two_days is the input to the model, needs to be a Tensor of shape [48, 13]
+
+    predictions = []
+    hours_length = previous_two_days.shape[0]
     mv_net.init_hidden(previous_two_days.unsqueeze(0).size(0))
-    predictions = mv_net(previous_two_days.unsqueeze(0).float().to(device))
+    for i in range(hours_ahead):
+        X = mv_net(previous_two_days.unsqueeze(0).float().to(device))
+        predictions.append(X.data)
+        previous_two_days.data[
+            0: (hours_length - 1), :
+        ] = previous_two_days.clone().data[1:hours_length, :]
+        previous_two_days.data[-1, :] = X.clone().data
 
     # converting matrix from megawatts to kilowatts
-    # predictions_matrix = predictions.detach().numpy()
-    # predictions_matrix = predictions_matrix / np.array(1000)
+    predictions_matrix = torch.cat(predictions, 0).detach().numpy()
+    predictions_matrix = predictions_matrix / np.array(1000)
 
-    return predictions
+    return predictions_matrix

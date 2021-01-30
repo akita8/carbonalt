@@ -4,10 +4,10 @@ from lxml import etree
 from requests import get
 import numpy as np
 
-PERIOD_DATE_FORMAT = "%Y%m%d%H"
+PERIOD_DATE_FORMAT = "%Y%m%d%H%M"
 TIME_INTERVAL_FORMAT = "%Y-%m-%dT%H:%MZ"
 
-ENERGY_LABELS = [
+ENERGY_LABELS_ORDER = [
     "B01",  # Biomass
     "B03",  # Fossil Coal-derived gas
     "B04",  # Fossil Gas
@@ -26,7 +26,7 @@ ENERGY_LABELS = [
 
 def convert_energy_production_to_matrix(energy_production):
     matrix = []
-    for label in ENERGY_LABELS:
+    for label in ENERGY_LABELS_ORDER:
         if label not in energy_production:
             matrix.append([0 for i in range(48)])
         else:
@@ -90,16 +90,15 @@ def parse_entsoe_response(response):
     return series_by_type
 
 
-def get_energy_production(start, end, region, token, logger):
+def get_energy_production(start, end, region, token):
     url = (
         "https://transparency.entsoe.eu/api"
         "?documentType=A75&processType=A16"
         f"&in_Domain={region}"
-        f"&periodStart={start.strftime(PERIOD_DATE_FORMAT)}00"
-        f"&periodEnd={end.strftime(PERIOD_DATE_FORMAT)}00"
+        f"&periodStart={start.strftime(PERIOD_DATE_FORMAT)}"
+        f"&periodEnd={end.strftime(PERIOD_DATE_FORMAT)}"
         f"&securityToken={token}"
     )
-    logger.debug("calling ENTSOE url %s", url)
     response = get(url)
     if response.status_code != 200:
         raise Exception(

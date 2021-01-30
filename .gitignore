@@ -112,3 +112,5 @@ public
 .venv
 
 __pycache__
+
+forecast/data/predictions.json
