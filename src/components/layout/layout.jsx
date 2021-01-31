@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { IntlProvider } from 'react-intl'
@@ -19,8 +19,18 @@ export const Layout = ({ children }) => {
     }
   `)
 
+  const [locale, setLocale] = useState(null);
+
+  useEffect(() => {
+    try {
+      setLocale(navigator.language)
+    } catch (error) {
+      console.log("navigator object not present")
+    }
+  }, [])
+
   return (
-    <IntlProvider >
+    <IntlProvider locale={locale}>
       <div className={style.layout}>
           <PageHeader siteTitle={data.site.siteMetadata?.title} />
           <main>
