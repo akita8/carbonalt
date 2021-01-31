@@ -230,7 +230,6 @@ const IndexPage = ({data}) => {
                     showSecond={false}
                     onChange={t => setTimeFrom(t)}
                     value={timeFrom}
-                    locale={navigator.languages ? navigator.languages[0] : navigator.language}
                   />
                 </div>
                 <div className={style.picker}>
@@ -242,8 +241,7 @@ const IndexPage = ({data}) => {
                       showSecond={false}
                       onChange={t => setTimeTo(t)}
                       value={timeTo}
-                      locale={navigator.languages ? navigator.languages[0] : navigator.language}
-                    />
+                      />
                 </div>
               </div>
             </>

@@ -20,7 +20,7 @@ export const Layout = ({ children }) => {
   `)
 
   return (
-    <IntlProvider locale={navigator.languages ? navigator.languages[0] : navigator.language} >
+    <IntlProvider >
       <div className={style.layout}>
           <PageHeader siteTitle={data.site.siteMetadata?.title} />
           <main>
