@@ -16,13 +16,16 @@
     "gatsby-plugin-sass": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.43",
     "gatsby-source-filesystem": "^2.3.37",
+    "gatsby-transformer-json": "^2.10.0",
     "gatsby-transformer-sharp": "^2.5.20",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
-    "rc-time-picker": "^3.7.3",
     "react": "^16.12.0",
+    "react-datetime-picker": "^3.0.5",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-intl": "^5.11.0",
+    "react-modal": "^3.12.1",
     "react-select": "^3.2.0"
   },
   "devDependencies": {

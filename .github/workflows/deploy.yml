@@ -12,6 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.1
+      - name: Setup poetry
+        uses: abatilo/actions-poetry@v2.1.0
+      - name: Install forecast dependencies
+        run: poetry install --no-dev
+        working-directory: ./forecast
+      - name: Create predictions
+        env:
+          ENTSOE_TOKEN: ${{ secrets.ENTSOE_TOKEN }}
+        run: poetry run predict
+        working-directory: ./forecast
       - name: Build Gatsby Site
         uses: jzweifel/gatsby-cli-github-action@master
         with:

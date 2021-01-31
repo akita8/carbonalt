@@ -2,8 +2,14 @@
 
 .pageFooter {
   padding: 10px;
-  text-align: center;
   background-color: $background-primary;
+  text-align: center;
+
+
+  div:last-child {
+    margin-top: 5px;
+    font-size: 10px;
+  }
 
   span {
     color: $text-warning;

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { IntlProvider } from 'react-intl'
 
 import { PageHeader } from "../page-header"
 import { PageFooter } from "../page-footer"
@@ -19,15 +20,17 @@ export const Layout = ({ children }) => {
   `)
 
   return (
-    <div className={style.layout}>
-      <PageHeader siteTitle={data.site.siteMetadata?.title} />
-      <main>
-        <div className={style.page}>
-          {children}
-        </div>
-      </main>
-      <PageFooter />
-    </div>
+    <IntlProvider locale={navigator.languages ? navigator.languages[0] : navigator.language} >
+      <div className={style.layout}>
+          <PageHeader siteTitle={data.site.siteMetadata?.title} />
+          <main>
+            <div className={style.page}>
+              {children}
+            </div>
+          </main>
+          <PageFooter />
+      </div>
+    </IntlProvider>
   )
 }
 
