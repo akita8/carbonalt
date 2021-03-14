@@ -27,10 +27,11 @@ jobs:
           ENTSOE_TOKEN: ${{ secrets.ENTSOE_TOKEN }}
         run: poetry run predict
         working-directory: ./forecast
-      - name: Build Gatsby Site
-        uses: jzweifel/gatsby-cli-github-action@master
+      - uses: actions/setup-node@v2
         with:
-          gatsby-arg: build
+          node-version: '14'
+      - run: npm install -g gatsby-cli
+      - run: gatsby build
       - name: Publish
         uses: netlify/actions/cli@master
         with:
