@@ -31,6 +31,7 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g gatsby-cli
+      - run: npm install
       - run: gatsby build
       - name: Publish
         uses: netlify/actions/cli@master
