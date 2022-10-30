@@ -5,7 +5,7 @@ description = ""
 authors = ["akita8 <mbianchi.akita@gmail.com>", "Nikos nikos.nakisph@gmail.com"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.9.1"
 torch = "^1.7.1"
 click = "^7.1.2"
 requests = "^2.25.1"
